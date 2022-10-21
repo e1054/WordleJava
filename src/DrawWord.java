@@ -1,14 +1,12 @@
 import java.util.*;
 import java.util.List;
 import java.awt.*;
-
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.border.LineBorder;
 
-public class DrawWord {
-    private String answer = "Hudson";
-    private String guess = "HLsuwn";
+public class DrawWord extends WordleInputHandler {
+
+    // WordleInputHandler handler = new WordleInputHandler();
 
     private List<JButton> getRowCells(int numRow) {
         // Based on number return certain part of ArrayList
@@ -78,14 +76,6 @@ public class DrawWord {
             WordleFrameDrawer.getButtons().get(i).setText(gridCellLetter);
 
         }
-    }
-
-    public String getGuess() {
-        return this.guess;
-    }
-
-    public String getAnswer() {
-        return this.answer;
     }
 
     public void setColorCellBorder() {
