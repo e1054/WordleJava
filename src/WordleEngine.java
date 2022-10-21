@@ -1,5 +1,9 @@
 public class WordleEngine {
 
+    public void endGame() {
+        System.out.println("Congratulations You Win");
+    }
+
     public static void main(String[] args) {
 
         // ======INIT GAME======
@@ -45,7 +49,7 @@ public class WordleEngine {
         // Final Guess
         engine.setGuess();
         drawer.fillRow(engine.getGuess());
-        engine.resetGuess();
+        engine.endGame();
 
     }
 }

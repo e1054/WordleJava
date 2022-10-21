@@ -6,29 +6,34 @@ import javax.swing.JButton;
 
 public class DrawWord extends WordleInputHandler {
 
-    public void winGame() {
-        System.out.println("YOU WIN🏆");
-    }
+    private int greenCounter = 0;
 
-    private List<JButton> getRowCells() {
+    public List<JButton> getRowCells() {
         // Based on number return certain part of ArrayList
 
         switch (super.numGuesses) {
 
             case 1:
-                System.out.println("RUN CASE");
+
                 return WordleFrameDrawer.getButtons().subList(0, 6);
 
             case 2:
+                greenCounter = 0;
                 return WordleFrameDrawer.getButtons().subList(6, 12);
 
             case 3:
+                greenCounter = 0;
+
                 return WordleFrameDrawer.getButtons().subList(12, 18);
 
             case 4:
+                greenCounter = 0;
+
                 return WordleFrameDrawer.getButtons().subList(18, 24);
 
             case 5:
+                greenCounter = 0;
+
                 return WordleFrameDrawer.getButtons().subList(24, 30);
 
             default:
@@ -48,6 +53,10 @@ public class DrawWord extends WordleInputHandler {
             if (btn.getText().equals(Character.toString(answer.charAt(getRowCells().indexOf(btn))))) {
 
                 changeCellBgColor(btn, Color.green);
+                greenCounter++;
+                if (greenCounter == 6) {
+                    endGame();
+                }
             }
 
             // Make sure guess letter is in answer
