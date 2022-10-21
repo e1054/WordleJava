@@ -1,6 +1,8 @@
 public class WordleEngine {
 
     public static void main(String[] args) {
+
+        // ======INIT GAME======
         WordleInputHandler engine = new WordleInputHandler();
 
         WordleFrameDrawer wordleFrame = new WordleFrameDrawer();
@@ -9,15 +11,41 @@ public class WordleEngine {
 
         wordleFrame.addCell(30);
 
-        engine.setGuess();
-
-        drawer.fillRow(engine.getGuess());
-
         drawer.setColorCellBorder();
 
         drawer.changeCellFont();
 
-        drawer.hintGiver(drawer.getAnswer(), 1);
+        // ======RUN GAME======
+
+        // 1st Guess
+        engine.setGuess();
+        drawer.fillRow(engine.getGuess());
+        engine.resetGuess();
+
+        // 2nd Guess
+        engine.setGuess();
+        drawer.fillRow(engine.getGuess());
+        engine.resetGuess();
+
+        // 3rd Guess
+        engine.setGuess();
+        drawer.fillRow(engine.getGuess());
+        engine.resetGuess();
+
+        // 4th Guess
+        engine.setGuess();
+        drawer.fillRow(engine.getGuess());
+        engine.resetGuess();
+
+        // 5th Guess
+        engine.setGuess();
+        drawer.fillRow(engine.getGuess());
+        engine.resetGuess();
+
+        // Final Guess
+        engine.setGuess();
+        drawer.fillRow(engine.getGuess());
+        engine.resetGuess();
 
     }
 }
