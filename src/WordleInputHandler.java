@@ -5,6 +5,7 @@ import java.lang.Math;
 
 public class WordleInputHandler extends WordleEngine {
     private Scanner scanner;
+    protected int numGuesses;
 
     protected static String answer;
     protected String guess;
@@ -27,7 +28,7 @@ public class WordleInputHandler extends WordleEngine {
         int randomIndex = ((int) (Math.random() * (words.size() - 1) + 1));
         System.out.println(randomIndex);
 
-        return words.get(randomIndex);
+        return words.get(randomIndex).toLowerCase();
     }
 
     public static void setAnswer(String selectedWord) {
@@ -41,14 +42,19 @@ public class WordleInputHandler extends WordleEngine {
 
     public void setGuess() {
 
-        while (this.guess.length() < 6) {
+        while (this.guess.length() != 6) {
             System.out.println("Please enter a SIX letter word: ");
-            this.guess = scanner.nextLine();
+            this.guess = (scanner.nextLine()).toLowerCase();
         }
 
     }
 
+    public void resetGuess() {
+        this.guess = "";
+    }
+
     public String getGuess() {
+
         return this.guess;
     }
 

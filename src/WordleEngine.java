@@ -17,7 +17,7 @@ public class WordleEngine {
 
         drawer.changeCellFont();
 
-        drawer.hintGiver(drawer.getAnswer(), 1);
+        drawer.hintGiver(drawer.getAnswer());
 
     }
 }

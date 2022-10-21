@@ -62,19 +62,6 @@ public class WordleFrameDrawer {
     public static void main(String[] args) {
 
         // ***INIT***
-        WordleFrameDrawer wordleFrame = new WordleFrameDrawer();
-
-        DrawWord drawer = wordleFrame.getDrawer();
-
-        wordleFrame.addCell(30);
-
-        drawer.fillRow(drawer.getGuess());
-
-        drawer.setColorCellBorder();
-
-        drawer.changeCellFont();
-
-        drawer.hintGiver(drawer.getAnswer(), 1);
 
     }
 }
